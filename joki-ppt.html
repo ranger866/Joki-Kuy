@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="shortcut icon" href="static/Logo-Joki.png" type="image/x-icon">
+    <script src="static/script.js"></script>
+    <title>JOKI KUY</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-head">
+            <img class="logo" src="static/Logo-Joki.png" alt="Logo-Joki">
+            <h1 class="h">Joki Kuy</h1>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">Beranda</a></li>
+            <li class="nav-item dropdown" id="dropdown">
+                <a class="drop" onclick="toggleDropdown()">Pilih Joki</a>
+                <ul id="dropdown-menu" class="dropdown-content">
+                    <li class="nav-dropdown-item"><a href="joki-coding.html">Joki Coding</a></li>
+                    <li class="nav-dropdown-item"><a href="joki-makalah.html">Joki Makalah</a></li>
+                    <li class="nav-dropdown-item"><a href="joki-ppt.html">Joki PPT</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button> <!-- Hamburger menu -->
+    </div>
+
+    <!-- Sidebar untuk layar kecil -->
+    <div id="sidebar" class="sidebar">
+        <ul class="nav">
+            <li class="nav-item"><a href="index.html">Beranda</a></li>
+            <li class="nav-item dropdown" id="dropdown2">
+                <a class="drop" onclick="toggleDropdownSidebar()">Pilih Joki</a>
+                <ul id="dropdown-menu-sidebar" class="dropdown-content">
+                    <li class="nav-dropdown-item"><a href="joki-coding.html">Joki Coding</a></li>
+                    <li class="nav-dropdown-item"><a href="joki-makalah">Joki Makalah</a></li>
+                    <li class="nav-dropdown-item"><a href="joki-ppt.html">Joki PPT</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="content-sewa" id="content-sewa">
+            <div class="head-content">
+                <h4>Joki PPT</h4>
+            </div>
+            <div class="contents">
+                <p>Punya Tugas Bikin MAKALAH dan nggak tau bikinnya gimana??? tenang, di JOKI KUY semua di KUY-in aja.
+                KUY cobain sewa jasa di JOKI KUY dijamin cepat, handal, dan pasti ramah di kantong.</p>
+            </div>
+            <button class="button"><a id="sewa" href="#" onclick="toggleFormSewa()">Kuy Sewa...</a></button>
+        </div>
+        <div class="content-sewa form-sewa" id="form-sewa">
+            <div class="head-content form-head">
+                <h4>Request</h4>
+            </div>
+            <div class="contents input-form">
+                <input type="text" name="nama" id="nama" placeholder="Masukkin Nama (nickname)">
+                <input type="text" name="nama" id="topik" placeholder="Masukkin Topik">
+                <textarea name="deskripsi" id="deskripsi" placeholder="Mau request yang gimana??"></textarea>
+            </div>
+            <button class="button-sewa"><a href="#" onclick="pesanJokiPPT()">Sewa...</a></button>
+        </div>
+    </div>
+</body>
+</html>
