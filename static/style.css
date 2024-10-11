@@ -1,0 +1,463 @@
+/* Aturan dasar untuk body dan tampilan umum */
+html, body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    /* background-color: #333; */
+    color: white;
+    background-image: url(Logo-Joki.png);
+    background-position: 50% 30%;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-blend-mode:exclusion;
+    background-color: rgb(255,255,255,0.3);
+    overflow-x: hidden;
+}
+
+/* Navbar utama (untuk desktop) */
+.navbar {
+    background-color: rgb(119, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-head {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.nav-list > .nav-item {
+    height: 2em;
+    width: 6.5em;
+    margin: 0 5px 0 0;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 5em;
+    filter: invert();
+    margin-right: 10px;
+}
+
+.h {
+    font-size: 1.5em;
+}
+
+/* Tombol menu untuk layar kecil (hamburger menu) */
+.menu-toggle {
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Hanya muncul pada layar kecil */
+    margin-right: 5px;
+}
+
+/* Sidebar (disembunyikan secara default) */
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 10;
+    right: 0;
+    height: 8em;
+    width: 50%;
+    background-color: rgb(119, 0, 0,0.5);
+    /* padding-top: 60px; */
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    transform: translateX(110%); /* Tersembunyi di luar layar */
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border-radius: 0px 0px 0px 10px;
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Sidebar muncul */
+}
+
+.sidebar.trans {
+    height: 15em;
+}
+
+.sidebar .nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.nav > .nav-item {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    height: 2em;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.nav-item:hover > a {
+    background-color: white;
+    border-radius: 5px;
+    color: rgb(119, 0, 0);
+    padding: 10px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Gaya Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: rgba(120, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: black solid 1px;
+    border-radius: 10px;
+    top: 3.5em;
+    right: 5;
+    width: 7.5em;
+    z-index: 1;
+    transform: translateX(200%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content > li {
+    list-style: disc;
+    padding: 5px 12px;
+}
+
+.dropdown-content > li  a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content li:hover {
+    color: red;
+    font-weight: bold;
+}
+
+.dropdown-content.active {
+    display: block;
+    transform: translateX(0);
+}
+
+.dropdown.active .drop{
+    background-color: white;
+    color: rgb(119, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.content {
+    background-color: rgb(255,255,255 ,0.5);
+    color: black;
+    border-radius: 20px;
+    border: solid 1px rgb(119, 0, 0);
+    margin: 10px;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    /* justify-content: center; */
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+.head-content {
+    background-color: rgb(119, 0, 0);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 3.5em;
+}
+
+.head-content > h4 {
+    margin-left: 20px;
+}
+
+.contents > p {
+    margin: 30px 15px 30px 15px;
+    /* text-align: justify; */
+}
+
+.content > .button {
+    background-color: rgb(119, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px 0px 10px 0px;
+    align-self: flex-end;
+    font-size: 1em;
+    margin-top: auto;
+}
+
+.content > .button > a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.content-sewa {
+    background-color: rgb(255,255,255 ,0.5);
+    color: black;
+    border-radius: 20px;
+    border: solid 1px rgb(119, 0, 0);
+    margin: 10px;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    /* justify-content: space-between; */
+    font-size: 1.5em;
+    transition: width 0.5s ease;
+    width: 100%;
+}
+
+.content-sewa.active {
+    width: 45%;
+}
+
+.content-sewa > .button {
+    background-color: rgb(119, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px 0px 10px 0px;
+    align-self: flex-end;
+    font-size: 0.75em;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: auto;
+}
+
+.content-sewa > .button > a {
+    text-decoration: none;
+    color: white;
+}
+
+.form-sewa {
+    opacity: 0%;
+    border: solid 1px rgb(10,10,10);
+    transition: all 0.2s ease;
+}
+
+.form-sewa.active {
+    display: flex;
+    opacity: 100%;
+}
+
+.form-head {
+    background-color: rgb(10,10,10);
+}
+
+.input-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.input-form > textarea {
+    margin: 10px 0px 0px 0px;
+    height: 7em;
+    width: 85%;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.75em;
+    padding: 10px;
+    border: solid 2px black;
+}
+
+.input-form > input {
+    margin: 15px 0px 0px 0px;
+    padding: 10px;
+    width: 85%;
+    height: 1.5em;
+    border: solid 2px black;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.75em;
+}
+
+.button-sewa {
+    background-color: rgb(10,10,10);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px 0px 10px 0px;
+    align-self: flex-end;
+    font-size: 0.75em;
+}
+
+.button-sewa > a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* --- Media Queries untuk Responsif --- */
+
+/* Ukuran layar besar (desktop) */
+@media (min-width: 1024px) {
+    .content {
+        width: 45%;
+        margin: 20px;
+    }
+
+    .h {
+        font-size: 2em;
+    }
+
+    .menu-toggle {
+        display: none; /* Tombol menu tidak diperlukan di layar besar */
+    }
+
+    .sidebar {
+        display: none; /* Sidebar tidak diperlukan di layar besar */
+    }
+}
+
+/* Ukuran layar sedang (tablet) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        padding: 5px 0px;
+    }
+    
+    .content {
+        width: 100%;
+    }
+
+    .h {
+        font-size: 1.8em;
+    }
+    
+    .menu-toggle {
+        display: none; /* Tombol menu tidak muncul di layar tablet */
+    }
+    
+    .sidebar {
+        display: none;
+    }
+
+    .dropdown-content {
+        top: 3.5em;
+        background-color: rgba(100, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        border: black solid 1px;
+        border-radius: 10px;
+    }
+
+    .content-sewa.active {
+        width: 100%;
+    }
+}
+
+/* Ukuran layar kecil (smartphone) */
+@media (max-width: 768px) {
+    /* Tampilkan tombol menu pada layar kecil */
+    .menu-toggle {
+        display: block; /* Tampilkan tombol menu */
+    }
+
+    /* Navbar disembunyikan, hanya sidebar yang muncul */
+    .nav-list {
+        display: none;
+    }
+
+    /* Sidebar muncul sebagai navigasi utama */
+    .sidebar {
+        display: block;
+    }
+
+    /* Tampilan konten lebih fleksibel di layar kecil */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        width: 100%; /* Konten mengambil seluruh lebar layar */
+        margin: 10px 0;
+    }
+
+    .h {
+        font-size: 1.5em;
+    }
+
+    .sidebar .nav {
+        font-size: 1.2em;
+    }
+
+    .navbar {
+        padding: 10px 0 10px 0;
+    }
+
+    .nav-list {
+        display: none;
+    }
+    
+    .dropdown-content {
+        top: 3em;
+        border-radius: 10px;
+        border: white solid 1px;
+        background-color: rgb(0,0,0,0.5);
+        backdrop-filter: blur(5px);
+        width: 7em;
+        height: 0;
+    }
+    
+    .content-sewa {
+        margin: 10px 0px 10px 0px;
+    }
+
+    html, body {
+        background-size: 125%;
+    }
+
+    .content-sewa.active {
+        width: 100%;
+    }
+}
