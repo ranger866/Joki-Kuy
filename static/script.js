@@ -102,7 +102,7 @@ function pesanJokiPPT() {
 
     // Buat URL WhatsApp dengan pesan yang sudah dikodekan
     const urlWa = `https://wa.me/${nomorWa}?text=${encodeURIComponent(
-        'Halo, kenalin saya' + nama + ', pengen pesan jasa joki PPT dengan topik ' + judul + ' dengan detail: \n' + deskripsi
+        'Halo, kenalin saya ' + nama + ', pengen pesan jasa joki PPT dengan topik ' + judul + ' dengan detail: \n' + deskripsi
     )}`;
 
     // Buka halaman WhatsApp Web untuk mengirim pesan
